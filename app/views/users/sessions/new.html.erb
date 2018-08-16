@@ -1,0 +1,44 @@
+<!-- app/views/devise/sessions/new.html.erb -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand glyphicon glyphicon-gift">SetGame</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <%= link_to '<span class="glyphicon glyphicon-log-in"></span> Log in'.html_safe, new_user_session_path %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to '<span class="glyphicon glyphicon-user"></span> Sign up'.html_safe, new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to '<span class="glyphicon glyphicon-lock"></span> Forgot your password?'.html_safe, new_user_password_path %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h2>Log in</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: "control-label" %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Log in", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
